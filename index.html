@@ -27,6 +27,66 @@
             <li><a class="address-link link" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
           </ul>
         </address>
+        <button class="mobile-menu-open" type="button">
+          <svg class="mobile-menu-icon" width="32" height="22">
+            <use href="./images/icons.svg#icon-menu-hamburger"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- 
+
+                M O B I L E   M E N U
+
+ -->
+      <div class="mobile-menu">
+        <div>
+          <button class="mobile-menu-close" type="button" data-mobile-close>
+            <svg class="icon-close" width="8" height="8">
+              <use href="./images/icons.svg#icon-modal-button-close"></use>
+            </svg>
+          </button>
+          <ul class="mobile-nav-menu list">
+            <li><a class="mobile-nav-link link" href="./index.html">Studio</a></li>
+            <li><a class="mobile-nav-link link" href="./portfolio.html">Portfolio</a></li>
+            <li><a class="mobile-nav-link link" href="">Contacts</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="mobile-contacts list">
+            <li><a class="mobile-phone-link link" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
+            <li><a class="mobile-email-link link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+          </ul>
+          <ul class="mobile-social-list list">
+            <li class="mobile-social-item">
+              <a class="mobile-social-link link" href="" target="_blank" rel="noopener noreferrer">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-footer-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a class="mobile-social-link link" href="" target="_blank" rel="noopener noreferrer">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-footer-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a class="mobile-social-link link" href="" target="_blank" rel="noopener noreferrer">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-footer-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a class="mobile-social-link link" href="" target="_blank" rel="noopener noreferrer">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-footer-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -97,10 +157,32 @@
         <div class="container">
           <h2 class="text-h-two">What are we doing</h2>
           <ul class="three-f-container list">
-            <li class="three-item"><img src="./images/squoosh_what_are_we_doing_image_1.jpg" alt="computer screen" width="360" height="300" /></li>
-            <li class="three-item"><img src="./images/squoosh_what_are_we_doing_image_2.jpg" alt="smartphone" width="360" height="300" /></li>
             <li class="three-item">
-              <img src="./images/squoosh_what_are_we_doing_image_3.jpg" alt="smartphone and laptop" width="360" height="300" />
+              <img
+                srcset="./images/wedoing_computer_screen_min.jpg 1x, ./images/2x_wedoing_computer_screen_min.jpg 2x"
+                src="./images/wedoing_computer_screen_min.jpg"
+                alt="computer screen"
+                width="360"
+                height="300"
+              />
+            </li>
+            <li class="three-item">
+              <img
+                srcset="./images/wedoing_smartphone_min.jpg 1x, ./images/2x_wedoing_smartphone_min.jpg 2x"
+                src="./images/wedoing_smartphone_min.jpg"
+                alt="smartphone"
+                width="360"
+                height="300"
+              />
+            </li>
+            <li class="three-item">
+              <img
+                srcset="./images/wedoing_smartphone_and_laptop_min.jpg 1x, ./images/2x_wedoing_smartphone_and_laptop_min.jpg 2x"
+                src="./images/wedoing_smartphone_and_laptop_min.jpg"
+                alt="smartphone and laptop"
+                width="360"
+                height="300"
+              />
             </li>
           </ul>
         </div>
@@ -113,7 +195,7 @@
           <h2 class="text-h-two">Our Team</h2>
           <ul class="team-f-container list">
             <li class="teammate">
-              <img src="./images/squoosh_foto_mark.jpg" alt="mark" width="264" />
+              <img srcset="./images/mark_min.jpg 1x, ./images/2x_mark_min.jpg 2x" src="./images/mark_min.jpg" alt="mark" width="264" />
               <div class="teammate-div">
                 <h3 class="section-team-header">Mark Guerrero</h3>
                 <p class="section-team-paragraph">Product Designer</p>
@@ -150,7 +232,7 @@
               </div>
             </li>
             <li class="teammate">
-              <img src="./images/squoosh_foto_tom.jpg" alt="tom" width="264" />
+              <img srcset="./images/tom_min.jpg 1x, ./images/2x_tom_min.jpg 2x" src="./images/tom_min.jpg" alt="tom" width="264" />
               <div class="teammate-div">
                 <h3 class="section-team-header">Tom Ford</h3>
                 <p class="section-team-paragraph">Frontend Developer</p>
@@ -187,7 +269,7 @@
               </div>
             </li>
             <li class="teammate">
-              <img src="./images/squoosh_foto_camila.jpg" alt="camila" width="264" />
+              <img srcset="./images/camila_min.jpg 1x, ./images/2x_camila_min.jpg 2x" src="./images/camila_min.jpg" alt="camila" width="264" />
               <div class="teammate-div">
                 <h3 class="section-team-header">Camila Garcia</h3>
                 <p class="section-team-paragraph">Marketing</p>
@@ -224,7 +306,7 @@
               </div>
             </li>
             <li class="teammate">
-              <img src="./images/squoosh_foto_daniel.jpg" alt="daniel" width="264" />
+              <img srcset="./images/daniel_min.jpg 1x, ./images/2x_daniel_min.jpg 2x" src="./images/daniel_min.jpg" alt="daniel" width="264" />
               <div class="teammate-div">
                 <h3 class="section-team-header">Daniel Wilson</h3>
                 <p class="section-team-paragraph">UI Designer</p>

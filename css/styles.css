@@ -101,15 +101,130 @@ main {
   flex-grow: 1;
 }
 .menu-flex {
-  display: flex;
+  display: none;
+  /* display: flex; */
   gap: 40px;
 }
 .address-flex {
-  display: flex;
+  display: none;
+  /* display: flex; */
   gap: 40px;
   align-items: center;
   font-style: normal;
 }
+
+/* 
+                M O B I L E   m e n u
+ */
+
+.mobile-menu-open {
+  width: 32px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+.mobile-menu-icon {
+  fill: var(--navyblue);
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  padding: 80px 35px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* z-index: 2; */
+}
+.mobile-menu-close {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-close:hover .icon-close,
+.mobile-menu-close:focus .icon-close {
+  fill: var(--white);
+}
+.mobile-menu-close:hover,
+.mobile-menu-close:focus {
+  border: none;
+  background-color: var(--ocean);
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.mobile-nav-link {
+  color: var(--navyblue);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.mobile-phone-link {
+  color: var(--slate);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11; /* 111.111% */
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-email-link {
+  color: var(--slate);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-social-list {
+  display: flex;
+  gap: 56px;
+}
+.mobile-social-item {
+  width: 40px;
+  height: 40px;
+}
+.mobile-social-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--iris);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 
+
+
+ */
+
 .logo {
   padding: 24px 0;
   color: var(--iris);
@@ -166,11 +281,20 @@ main {
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .navigation-link:hover,
 .navigation-link:focus,
 .address-link:hover,
-.address-link:focus {
+.address-link:focus,
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
   color: var(--ocean);
+}
+.mobile-email-link:hover,
+.mobile-email-link:focus,
+.mobile-phone-link:hover,
+.mobile-phone-link:focus {
+  color: var(--iris);
 }
 
 /*--------------  H E R O  ----------*/
@@ -179,23 +303,28 @@ main {
   margin: 0 auto;
   max-width: 1440px;
   background-color: var(--navyblue);
-  padding-top: 188px;
-  padding-bottom: 188px;
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  padding: 112px 0;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-mobile-min.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-tablet-min.jpg);
+  }
+}
 .hero-header {
   color: var(--white);
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
-  max-width: 496px;
+  max-width: 320px;
   margin: 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
+  text-transform: capitalize;
 }
 .hero-button {
   color: var(--white);
@@ -307,10 +436,13 @@ main {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .teammate-item-link:hover,
-.teammate-item-link:focus {
+.teammate-item-link:focus,
+.mobile-social-link:hover,
+.mobile-social-link:focus {
   background-color: var(--ocean);
 }
-.teammate-icon {
+.teammate-icon,
+.mobile-social-icon {
   fill: var(--cloud);
 }
 
@@ -857,10 +989,30 @@ main {
     max-width: 428px;
   }
 }
+/* 
 
+               7 6 8
+
+ */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-tablet-min.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+    }
+  }
+  .hero-header {
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+    max-width: 496px;
+    text-transform: none;
   }
   .team > .container,
   .customers > .container,
@@ -907,7 +1059,11 @@ main {
     margin: 0;
   }
 }
+/* 
 
+          1 1 5 8  
+
+*/
 @media screen and (min-width: 1158px) {
   .container,
   .team > .container,
@@ -916,6 +1072,19 @@ main {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .hero {
+    padding: 188px 0;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+    }
+  }
+  .hero-header {
+    margin-bottom: 48px;
   }
   .section-two {
     padding: 120px 0;
