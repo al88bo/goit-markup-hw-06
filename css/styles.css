@@ -44,7 +44,6 @@ button {
   cursor: pointer;
   border: none;
   font-family: inherit;
-  color: currentColor;
 }
 input {
   font-family: inherit;
@@ -102,13 +101,12 @@ main {
 }
 .menu-flex {
   display: none;
-  /* display: flex; */
   gap: 40px;
 }
 .address-flex {
   display: none;
-  /* display: flex; */
-  gap: 40px;
+  gap: 12px;
+  flex-direction: column;
   align-items: center;
   font-style: normal;
 }
@@ -139,7 +137,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* z-index: 2; */
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu-close {
   position: absolute;
@@ -148,7 +148,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--cornflower);
   top: 24px;
   right: 24px;
   border-radius: 50%;
@@ -163,6 +163,12 @@ main {
 .mobile-menu-close:focus {
   border: none;
   background-color: var(--ocean);
+}
+.no-scroll {
+  overflow: hidden;
+}
+.mobile-menu.is-hidden {
+  transform: translateX(100%);
 }
 
 .mobile-nav-menu {
@@ -186,7 +192,7 @@ main {
 }
 .mobile-phone-link {
   color: var(--slate);
-  font-size: 36px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.02em;
@@ -203,7 +209,8 @@ main {
 }
 .mobile-social-list {
   display: flex;
-  gap: 56px;
+  max-width: 328px;
+  justify-content: space-between;
 }
 .mobile-social-item {
   width: 40px;
@@ -234,7 +241,7 @@ main {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
+  margin-right: 120px;
 }
 .logo-span {
   color: var(--navyblue);
@@ -276,9 +283,9 @@ main {
 }
 .address-link {
   color: var(--slate);
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -311,7 +318,7 @@ main {
 }
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-tablet-min.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/2x-hero-bg-mobile-min.jpg);
   }
 }
 .hero-header {
@@ -754,7 +761,8 @@ main {
 }
 
 .modal-window-container {
-  width: 408px;
+  max-width: 408px;
+  min-width: 316px;
   min-height: 584px;
   position: absolute;
   top: 50%;
@@ -1004,9 +1012,18 @@ main {
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero {
-      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/2x-hero-bg-tablet-min.jpg);
     }
   }
+
+  .menu-flex,
+  .address-flex {
+    display: flex;
+  }
+  .mobile-menu-open {
+    display: none;
+  }
+
   .hero-header {
     font-size: 56px;
     line-height: 1.07;
@@ -1065,6 +1082,18 @@ main {
 
 */
 @media screen and (min-width: 1158px) {
+  .logo {
+    margin-right: 76px;
+  }
+  .address-flex {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .address-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
   .container,
   .team > .container,
   .customers > .container,
@@ -1076,11 +1105,11 @@ main {
 
   .hero {
     padding: 188px 0;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-desktop-min.jpg);
   }
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero {
-      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/2x-hero-bg-desktop-min.jpg);
     }
   }
   .hero-header {
